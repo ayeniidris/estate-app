@@ -1,6 +1,17 @@
-namespace EstateApp.Data.DatabaseContexts.AuthenticationDbContext
+using EstateApp.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
-public class AuthenticationDbContext
+namespace EstateApp.Data.DatabaseContexts.AuthenticationDbContext
 {
-    
+    public class AuthenticationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public AuthenticationDbContext(DbContextOptions<AuthenticationDbContext> options)
+            :base(options)
+        {
+
+        }
+    }
 }
+
+
